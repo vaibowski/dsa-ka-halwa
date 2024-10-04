@@ -11,7 +11,7 @@ from typing import Optional
 
 class Solution:
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
-        if node == None:
+        if node is None:
             return
         # creating a dictionary to store all created clones against the node values
         clones = {}
