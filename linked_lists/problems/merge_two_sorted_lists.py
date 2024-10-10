@@ -8,6 +8,7 @@ class ListNode:
 
 
 class Solution:
+    # trick is to get a head pointer to return the linked list at the end, and a current pointer to build the merged linked list
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         if not list1:
             return list2
