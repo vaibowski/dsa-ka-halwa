@@ -3,7 +3,7 @@ from typing import List
 
 
 class KthLargest:
-
+    # to avoid TLE, we need to store only the k largest elements, and let of the smaller ones
     def __init__(self, k: int, nums: List[int]):
         self.heap = nums
         heapq.heapify(self.heap)
