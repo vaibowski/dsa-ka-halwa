@@ -3,6 +3,7 @@ from trees.problems.max_depth import TreeNode
 
 
 class Solution:
+    # trick is to use -1 for denoting unbalanced subtrees
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         if not root:
             return True
