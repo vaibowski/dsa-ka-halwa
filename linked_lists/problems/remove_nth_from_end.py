@@ -14,3 +14,25 @@ class Solution:
             ptr = ptr.next
         ptr.next = ptr.next.next
         return head
+
+    def removeNthFromEndTwoPointer(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        count = 0
+        first = head
+        while count < n:
+            count += 1
+            first = first.next
+
+        second = ListNode(0)
+        second.next = head
+
+        while first:
+            first = first.next
+            second = second.next
+
+        prev = second
+        second = second.next
+        if second == head:
+            head = head.next
+            return head
+        prev.next = second.next
+        return head
