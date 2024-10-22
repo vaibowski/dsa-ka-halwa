@@ -1,17 +1,14 @@
 from typing import Optional
-
 from linked_lists.problems.merge_two_sorted_lists import ListNode
 
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        if not head:
-            return False
-        slow, fast = head, head.next
-        while fast and slow:
-            if fast == slow:
+        slow_pointer = head
+        fast_pointer = head
+        while fast_pointer and fast_pointer.next:
+            slow_pointer = slow_pointer.next
+            fast_pointer = fast_pointer.next.next
+            if slow_pointer == fast_pointer:
                 return True
-            slow = slow.next
-            fast = fast.next.next if fast.next else None
-
         return False
