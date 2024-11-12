@@ -14,6 +14,8 @@ class Solution:
                 return True
         return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
 
+    # call isSameTree everytime the root val and subRoot val are the same.
+    # If it returns as false, move forward with other nodes in the root tree
     def isSameTree(self, p, q):
         if p is None and q is None:
             return True
