@@ -17,3 +17,22 @@ def isValidBST(self, root: Optional[TreeNode]) -> bool:
 
     return dfs(root, -sys.maxsize, sys.maxsize)
 
+
+def isValidBSTInorderTraversal(self, root: Optional[TreeNode]) -> bool:
+    output = []
+
+    def inorder(node):
+        if node is None:
+            return
+        inorder(node.left)
+        output.append(node.val)
+        inorder(node.right)
+        return
+
+    inorder(root)
+
+    for i in range(1, len(output)):
+        if output[i - 1] >= output[i]:
+            return False
+
+    return True
