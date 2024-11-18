@@ -1,4 +1,4 @@
-from random import random
+from random import randint
 from typing import List
 
 
@@ -11,7 +11,7 @@ class Solution:
         if left >= right:
             return
 
-        pivot = nums[random.randint(left, right)]
+        pivot = nums[randint(left, right)]
         i, j = left, right
         while i <= j:
             while nums[i] < pivot:  # Find first i such that nums[i] >= pivot
